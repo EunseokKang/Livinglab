@@ -1,0 +1,19 @@
+<!-- bell_system/templates/bell_system/detail.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ route.route_number }} - 시내버스 승차벨 시스템</title>
+</head>
+<body>
+    <h1>{{ route.route_number }} - 시내버스 승차벨 시스템</h1>
+    <p>{{ route.description }}</p>
+    <h2>정류장 목록</h2>
+    <ul>
+        {% for stop in route.bus_stops.all %}
+            <li>{{ stop.stop_name }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'bell_system:index' %}">Back to Index</a>
+</body>
+</html>
